@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ML ChefBot - Recipe Recommender</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="logo">🍳</span>
+        <span class="brand-text">ML ChefBot</span>
+      </div>
+      <div class="nav-menu">
+        <span class="user-greeting">Hello, <strong>{{ username }}</strong></span>
+        <a href="/logout" class="btn-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">🍳 AI-Powered Chef</h1>
+      <p class="hero-subtitle">Find perfect recipes based on ingredients and nutrition goals</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Search Form -->
+    <div class="search-card">
+      <div class="card-header">
+        <h2>🔍 Search Recipes</h2>
+        <p>Enter your available ingredients and preferences</p>
+      </div>
+
+      <form id="queryForm" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label>🥘 Ingredients (comma separated)</label>
+            <input 
+              id="ingredients" 
+              placeholder="e.g., chicken, tomato, rice, garlic"
+              class="input-primary"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>⏱️ Max Time (minutes)</label>
+            <input 
+              id="max_time" 
+              type="number" 
+              placeholder="e.g., 30"
+              class="input-primary"
+            />
+          </div>
+        </div>
+
+        <!-- Nutrition Targets Section -->
+        <div class="nutrition-section">
+          <h3 class="section-title">🎯 Nutrition Targets (Optional)</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>🔥 Calories (kcal)</label>
+              <input 
+                id="target_calories" 
+                type="number" 
+                placeholder="e.g., 500"
+                class="input-primary"
+              />
+            </div>
+            <div class="form-group">
+              <label>💪 Protein (g)</label>
+              <input 
+                id="target_protein" 
+                type="number" 
+                placeholder="e.g., 25"
+                class="input-primary"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>📊 Tolerance (±%)</label>
+              <input 
+                id="tolerance" 
+                type="number" 
+                step="0.05"
+                value="0.2"
+                placeholder="0.2 = ±20%"
+                class="input-primary"
+              />
+              <small class="input-hint">How flexible you are with nutrition targets</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+          <button id="predictBtn" class="btn btn-primary">
+            <span class="btn-icon">🧠</span>
+            <span class="btn-text">Find Recipes</span>
+          </button>
+          <button id="predictNutBtn" class="btn btn-nutrition">
+            <span class="btn-icon">🔬</span>
+            <span class="btn-text">Nutrition Match</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Alerts -->
+      <div id="alerts"></div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="resultsSection" class="results-section" style="display: none;">
+      <div class="results-header">
+        <h2>🍽️ Recipe Matches</h2>
+        <p id="resultCount"></p>
+      </div>
+      <div id="results" class="results-grid"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Made with ❤️ by ChefBot Team • Powered by Machine Learning</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
