@@ -1,13 +1,5 @@
 
-# ML ChefBot Project (Code + UI)
 
-Unzip your dataset into `data/` and run:
-```
-pip install -r requirements.txt
-python app.py
-```
-Then open http://127.0.0.1:5000
-=======
 # ChefBot – Intelligent Recipe Recommendation System
 
 ChefBot is an AI-powered recipe recommendation web application that suggests **multiple recipes** based on user-provided **ingredients, time constraints, and nutritional preferences**. The system is designed to help users quickly discover meals that align with their dietary goals and available resources.
