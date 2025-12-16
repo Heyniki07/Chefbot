@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ML ChefBot Project (Code + UI)
 
 Unzip your dataset into `data/` and run:
