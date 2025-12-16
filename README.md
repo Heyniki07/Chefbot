@@ -140,7 +140,7 @@ This project is intended for **academic and learning purposes**. Licensing can b
 
 ## 👤 Author
 
-Developed by **Nikita Deshmukh** and **Siddhi Gawade**
+Developed by **NIKITA DESHMUKH** and **SIDDHI GAWADE**
 B.Sc. Data Science Student
 
 ---
